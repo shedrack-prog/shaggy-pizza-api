@@ -109,6 +109,7 @@ const loginUser = async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       expires: new Date(Date.now() + oneDay),
+      sameSite: 'None',
     });
     return res.status(200).json({
       message: 'Login successful.',
