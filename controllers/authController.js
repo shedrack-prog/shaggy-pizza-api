@@ -104,7 +104,7 @@ const loginUser = async (req, res) => {
     }
 
     const token = createToken({ userId: user._id, role: user.role }, '7d');
-    const oneDay = 1000 * 60 * 60 * 24;
+    const oneDay = 1024 * 60 * 60 * 24;
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
